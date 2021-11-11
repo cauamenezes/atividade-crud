@@ -2,6 +2,4 @@
 
     header("location: login/index.php");
 
-
-
 ?>

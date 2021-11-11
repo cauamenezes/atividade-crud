@@ -1,5 +1,11 @@
 <?php
     include('../componentes/header.php');
+
+    require('../database/conexao.php');
+
+    $sql = "SELECT * FROM tbl_pessoa";
+
+    $resultado = mysqli_query($conexao, $sql);
 ?>
 
 <div class="container">
@@ -20,19 +26,24 @@
     </thead>
 
     <tbody>
+        <?php ?>
             <tr>
-                <th>1</th>
-                <th>TESTE DE NOME</th>
-                <th>TESTE DE SOBRENOME</th>
-                <th>TESTE DE EMAIL</th>
-                <th>TESTE DE CELULAR</th>
+                <th><?php echo $cod_pessoa?></th>
+                <th><?php echo $nome?></th>
+                <th><?php echo $sobrenome?></th>
+                <th><?php echo $email?></th>
+                <th><?php echo $celular?></th>
                 <th>
-                    <button class="btn btn-warning">Editar</button>
+
+                <a href="acoes.php?cod_pessoa=<?php echo $dados['cod_pessoa']?>">EDITAR</a>
+                <a href="acoes.php?cod_pessoa=<?php echo $dados['cod_pessoa'].'&acoes=delete'?>">EXCLUIR</a>
+
+                    <!-- <button class="btn btn-warning">Editar</button>
 
                     <form action="" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="">
                         <button class="btn btn-danger">Excluir</button>
-                    </form>
+                    </form> -->
                     
                 </th>
             </tr>
