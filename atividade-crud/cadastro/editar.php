@@ -1,5 +1,11 @@
 <?php
     include('../componentes/header.php');
+
+    require('../database/conexao.php');
+
+    $sql = "SELECT * FROM tbl_pessoa";
+
+    $resultado = mysqli_query($conexao, $sql);
 ?>
 
 
@@ -10,7 +16,7 @@
                 <h2>Edição</h2>
             </div>
             <div class="card-body">
-                <form method="post" action="">
+                <form method="post" action="../acoes.php">
                     <input class="form-control" type="text" placeholder="Digite o nome" name="nome" id="nome">
                     <br />
                     <input class="form-control" type="text" placeholder="Digite o sobrenome" name="sobrenome" id="sobrenome">
