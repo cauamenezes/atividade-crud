@@ -45,7 +45,7 @@
                 <th><?php echo $celular?></th>
                 <th>
 
-                <a class="btn btn-warning" href="../acoes.php?cod_pessoa=<?php echo $usuario['cod_pessoa'].'&acoes=editar'?>">EDITAR</a>
+                <a class="btn btn-warning" onclick="javascript:window.location.href = '../cadastro/editar.php?cod_pessoa=<?= $cod_pessoa?>'">EDITAR</a>
                 <a class="btn btn-danger" onclick="deletar(<?php echo $cod_pessoa?>)">EXCLUIR</a>
 
                     <!-- <button class="btn btn-warning">Editar</button>

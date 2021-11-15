@@ -51,15 +51,20 @@ switch ($acao) {
 
             $cod_pessoa = $_POST["cod_pessoa"];
             $nome = $_POST["nome"];
-            $sobrenome = ["sobrenome"];
+            $sobrenome = $_POST["sobrenome"];
             $email = $_POST["email"];
             $celular = $_POST["celular"];
 
-            $sql = "UPDATE tbl_pessoa SET '$nome', '$sobrenome', '$email', '$celular'  WHERE cod_pessoa = $cod_pessoa";
+            $sql = "UPDATE tbl_pessoa SET
+            nome = '$nome',
+            sobrenome = '$sobrenome',
+            email = '$email',
+            celular = '$celular'
+            WHERE cod_pessoa = $cod_pessoa";
             
             $resultado = mysqli_query($conexao, $sql);
 
-            header('location: cadastro/editar.php');
+            header('location: listagem/index.php');
 
             break;
     

@@ -1,9 +1,9 @@
 <?php
 
 const HOST = 'localhost';
-const USER = 'root';
-const PASSWORD = 'bcd127';
-const DATABASE = 'atvidade_cadastro_crud';
+const USER = 'caua';
+const PASSWORD = 'La%jedemetal0203,';
+const DATABASE = 'cadastro';
 
 $conexao = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 
