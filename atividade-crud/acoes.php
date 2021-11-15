@@ -2,9 +2,11 @@
 
 session_start();
 
-// echo 'TESTE'; exit;
+if (!isset($_SESSION["usuarioId"])) {
+    header("location: ../login/index.php");
+    }
 
-require('./database/conexao.php');
+require("./database/conexao.php");
 
 if (isset($_GET["acoes"])) {
     $acao = $_GET["acoes"];

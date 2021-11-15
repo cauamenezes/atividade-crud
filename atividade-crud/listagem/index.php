@@ -1,4 +1,11 @@
 <?php
+
+    session_start();
+
+    if (!isset($_SESSION["usuarioId"])) {
+        header("location: ../login/index.php");
+    }
+
     include('../componentes/header.php');
 
     require('../database/conexao.php');
