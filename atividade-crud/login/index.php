@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     include('../componentes/header.php');
 ?>
 
@@ -7,6 +10,7 @@
         <div class="container-form">
     
                 <form action="processa_login.php" method="POST">
+                    <input type="hidden" name="acoes" value="login">
                     
                     <div class="form-group">
                         <label for="txt_usuario">USUÁRIO</label>

@@ -67,7 +67,30 @@ switch ($acao) {
             header('location: listagem/index.php');
 
             break;
-    
+
+            case 'login':
+
+                $usuario = $_POST["txt_usuario"];
+                $senha = $_POST["txt_senha"];
+
+                $sql = "SELECT * FROM tbl_administrador";
+
+                $resultado = mysqli_query($conexao, $sql);
+
+                header("location: listagem/index.php");
+
+                realizarLogin($usuario, $senha, $conexao);
+
+            break;
+        
+            case 'logout':
+
+                session_unset();
+                session_destroy();
+                header("location: login/index.php");
+
+            break;
+
     default:
         # code...
         break;
