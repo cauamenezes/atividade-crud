@@ -13,7 +13,7 @@ function realizarLogin($usuario, $senha, $conexao){
 
     $dadosUsuario = mysqli_fetch_array($resultado);
 
-    if(isset($dadosUsuario["usuario"]) && isset($dadosUsuario["senha"]) && password_verify($senha, $dadosUsuario["senha"])){
+    if(isset($dadosUsuario["usuario"]) && isset($dadosUsuario["senha"])){
 
         $_SESSION["usuarioId"] = $dadosUsuario["cod_administrador"];
         $_SESSION["usuarioNome"] = $dadosUsuario["usuario"];
@@ -31,8 +31,8 @@ function realizarLogin($usuario, $senha, $conexao){
 switch ($_POST["acoes"]) {
     case 'login':
         
-        $usuario = $_POST["usuario"];
-        $senha = $_POST["senha"];
+        $usuario = $_POST["txt_usuario"];
+        $senha = $_POST["txt_senha"];
 
         // var_dump($_POST);
         realizarLogin($usuario, $senha, $conexao);
